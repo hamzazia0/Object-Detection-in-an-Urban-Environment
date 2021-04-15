@@ -1,6 +1,6 @@
 # Object detection in an Urban Environment
 
-** Github repository link: https://github.com/hamzazia0/Object-Detection-in-an-Urban-Environment **
+**Github repository link: https://github.com/hamzazia0/Object-Detection-in-an-Urban-Environment** 
 
 ## Data
 
