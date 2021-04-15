@@ -1,5 +1,7 @@
 # Object detection in an Urban Environment
 
+**Github repository link: https://github.com/hamzazia0/Object-Detection-in-an-Urban-Environment **
+
 ## Data
 
 For this project, we will be using data from the [Waymo Open dataset](https://waymo.com/open/). The files can be downloaded directly from the website as tar files or from the [Google Cloud Bucket](https://console.cloud.google.com/storage/browser/waymo_open_dataset_v_1_2_0_individual_files/) as individual tf records. 
@@ -130,7 +132,7 @@ python inference_video.py -labelmap_path label_map.pbtxt --model_path training/e
 
 ## Writeup documentation
 
-**Kindly checkout the following link for the documentation:**
+**Kindly checkout the following link for the documentation:** 
 
 https://github.com/hamzazia0/Object-Detection-in-an-Urban-Environment/blob/main/writeup.md 
 
