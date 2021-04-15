@@ -30,12 +30,12 @@ def split(data_dir):
     random.shuffle(files)
 
     # creating directories
-    val =  data_dir + '/val'
-    os.makedirs(data_dir+"/val", exist_ok=True)
-    test = data_dir + '/test'
-    os.makedirs(data_dir+"/test", exist_ok=True)
-    train = data_dir + '/train'
-    os.makedirs(data_dir+"/train", exist_ok=True)
+    val =  os.path.join(data_dir, 'val')
+    os.makedirs(val, exist_ok=True)
+    test = os.path.join(data_dir, 'test')
+    os.makedirs(test, exist_ok=True)
+    train = os.path.join(data_dir, 'train')
+    os.makedirs(train, exist_ok=True)
 
     # moving the files according to their allocated size
     for n, fname in enumerate(files):
