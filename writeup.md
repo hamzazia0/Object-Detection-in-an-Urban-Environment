@@ -1,7 +1,9 @@
 
 # Project overview
 
-for this "Object detection in an urban environment" project, we have performed exploratory data analysis. then we splitted the dataset into three parts training, testing and validation. In our case, we kept 75 data for the training and 15 for testing and validation. 
+**Github repository link: https://github.com/hamzazia0/Object-Detection-in-an-Urban-Environment**
+
+For this "Object detection in an urban environment" project, we have performed exploratory data analysis. then we splitted the dataset into three parts training, testing and validation. In our case, we kept 75 data for the training and 15 for testing and validation. 
 
 After editing the config file, we monitored the training and testing performance by using tensorboard. Then we tuned some hyperparameters in the config file to differentiate the performance with the previous training and evaluation process.
 
@@ -44,7 +46,7 @@ After successfully executing the file, we can checkout some images where objects
 
 At first, we fixed the "split" function in the "create_split.py" file to split the dataset. Then we ran the following script  "python create_splits.py --data_dir /home/workspace/data/"
 
-After successfully executing the command, the dataset was splitted into three parts, training, testing and validation. We allocated 70 data for training, 15 each for testing and validation.
+After successfully executing the command, the dataset was splitted into three parts, training, testing and validation. In our dataset, there are 100 .tfrecords files in total. Since, we need to train our model properly, it needs to be large enough to have a taste of every objects presented in our dataset. After the training part is completed, we need to do the testing and evaluation. In my case, I kept sufficient data to measure our model's performance. Overall, We allocated 70 data for training, 15 each for testing and validation. 
 
 After that, we shuffled the dataset to make sure that images containing various objects are randomly distributed among training, testing and validation section.
 
@@ -72,6 +74,8 @@ With the help of tensorboard, we monitored our training and evaluation process. 
     <em>Precision chart</em>
 </p>
 
+From the chart, we can see that detection boxes' mean average precision (mAP) increases as time passes but it still remains comparatively lower than the average.
+
 2. Recall chart:
 
 <p>
@@ -80,6 +84,8 @@ With the help of tensorboard, we monitored our training and evaluation process. 
     <em>Recall chart</em>
 </p>
 
+From the chart, we can see quite the similar scenario for detection boxes' Recall value since it is remains comparatively lower than the average but increases as time passes.
+
 3. Loss chart:
 
 <p>
@@ -87,6 +93,8 @@ With the help of tensorboard, we monitored our training and evaluation process. 
     <br>
     <em>Loss chart</em>
 </p>
+
+From the chart above, we can see that training loss (blue line) is comparatively lower than the evaluation loss (orange) which should not be the case under normal circumstances. Which proves that there is some overfitting in our model. Since we did not implement data augmentation yet, this behaviour was somewhat predictable. But after enhancing our model with data augmentation, we will experience proper performance overall.
 
 4. Learning rate chart: 
 
@@ -125,6 +133,8 @@ After implementing these changes here are the result we got:
     <em>New Precision chart</em>
 </p>
 
+After implementing the above augmentations, we can see from our chart that the new precision rate (light blue) is in much better position than the previous one (deep blue). And the value kept on increasing over time.
+
 2. Recall chart:
 
 <p>
@@ -132,6 +142,8 @@ After implementing these changes here are the result we got:
     <br>
     <em>New Recall chart</em>
 </p>
+
+We can see the similar thing with our recall chart. The new line comparatively stays well above than the old line.
 
 3. Loss chart:
 
@@ -141,7 +153,9 @@ After implementing these changes here are the result we got:
     <em>New Loss chart</em>
 </p>
 
-We can see in all three cases, our model performed much better than the first training and evaluation process. So, applying those augmentation changes definitely made the impact in our model.
+From the new loss chart, we can see that our updated model has lower loss compared to the initial loss chart which is a good improvement.
+
+It is clear that in all three cases, our model performed much better than the first training and evaluation process. So, applying those augmentation changes definitely made an impact in our model.
 
 Now, we have run the "explore_augmentation.ipynb" file. Here are the images,
 
